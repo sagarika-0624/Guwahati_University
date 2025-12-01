@@ -1,0 +1,45 @@
+﻿app/Components/Feature/AnnouncementSection.tsx(97,23): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ urgent: { icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; color: string; bg: string; border: string; }; maintenance: { ...; }; info: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ urgent: { icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; color: string; bg: string; border: string; }; maintenance: { ...; }; info: { ...; }; }'.
+app/Components/Feature/CulturalSpotlight.tsx(4,28): error TS2307: Cannot find module '@/components/ui/GamochaPattern' or its corresponding type declarations.
+app/Components/Feature/HeroSection.tsx(3,31): error TS2307: Cannot find module '@/utils' or its corresponding type declarations.
+app/Components/Feature/HeroSection.tsx(9,31): error TS2307: Cannot find module '@/components/ui/PortalStatusBadge' or its corresponding type declarations.
+app/Components/Feature/HeroSection.tsx(169,85): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+app/Components/Feature/HeroSection.tsx(193,31): error TS2339: Property 'title' does not exist on type '{ titleKey: string; descKey: string; color: string; }'.
+app/Components/Feature/RolebasedGateway.tsx(3,31): error TS2307: Cannot find module '@/utils' or its corresponding type declarations.
+app/Components/Feature/RolebasedGateway.tsx(138,52): error TS2345: Argument of type 'string' is not assignable to parameter of type 'SetStateAction<null>'.
+app/Components/Feature/RolebasedGateway.tsx(146,50): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'SetStateAction<null>'.
+  Type 'string' is not assignable to type 'SetStateAction<null>'.
+app/Components/layout/Footer.tsx(2,31): error TS2307: Cannot find module '@/utils' or its corresponding type declarations.
+app/Components/layout/Footer.tsx(15,8): error TS2307: Cannot find module '@/components/ui/dropdown-menu' or its corresponding type declarations.
+app/Components/layout/Footer.tsx(81,21): error TS2339: Property 'toggleLanguage' does not exist on type 'LanguageContextType'.
+app/Components/layout/Footer.tsx(83,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/Components/layout/UnifiedHeader.tsx(2,31): error TS2307: Cannot find module '@/utils' or its corresponding type declarations.
+app/Components/layout/UnifiedHeader.tsx(15,8): error TS2307: Cannot find module '@/components/ui/dropdown-menu' or its corresponding type declarations.
+app/Components/layout/UnifiedHeader.tsx(81,21): error TS2339: Property 'toggleLanguage' does not exist on type 'LanguageContextType'.
+app/Components/layout/UnifiedHeader.tsx(83,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(280,25): error TS2554: Expected 1 arguments, but got 0.
+app/Components/ui/LanguageContext.tsx(282,36): error TS7031: Binding element 'children' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(294,14): error TS7006: Parameter 'key' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(295,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ en: { home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }; as: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ en: { home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }; as: { ...; }; }'.
+app/Components/ui/LanguageContext.tsx(295,43): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }'.
+app/Components/ui/LanguageContext.tsx(316,11): error TS7006: Parameter 'key' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(316,19): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }'.
+app/Pages/Admission.tsx(16,8): error TS2307: Cannot find module '@/components/ui/accordion' or its corresponding type declarations.
+app/Pages/Admission.tsx(215,58): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'SetStateAction<null>'.
+  Type 'string' is not assignable to type 'SetStateAction<null>'.
+app/Pages/AdmissionPortal.tsx(11,23): error TS2307: Cannot find module '@/components/ui/label' or its corresponding type declarations.
+app/Pages/AdmissionPortal.tsx(12,26): error TS2307: Cannot find module '@/components/ui/progress' or its corresponding type declarations.
+app/Pages/AdmissionPortal.tsx(19,8): error TS2307: Cannot find module '@/components/ui/select' or its corresponding type declarations.
+app/Pages/AdmissionPortal.tsx(196,39): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app/Pages/AdmissionPortal.tsx(223,37): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app/Pages/Contact.tsx(6,26): error TS2307: Cannot find module '@/components/ui/textarea' or its corresponding type declarations.
+app/Pages/CulturalHeritage.tsx(10,28): error TS2307: Cannot find module '@/components/ui/GamochaPattern' or its corresponding type declarations.
+app/Pages/Faculty.tsx(8,79): error TS2307: Cannot find module '@/components/ui/select' or its corresponding type declarations.
+app/Pages/Journals.tsx(17,8): error TS2307: Cannot find module '@/components/ui/select' or its corresponding type declarations.
+app/Pages/Programs.tsx(229,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+app/Pages/Research.tsx(332,64): error TS2322: Type '{ children: Element[]; value: string; onValueChange: Dispatch<SetStateAction<string>>; className: string; }' is not assignable to type 'IntrinsicAttributes & { value: string; onValueChange: (value: string) => void; children: ReactNode; }'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & { value: string; onValueChange: (value: string) => void; children: ReactNode; }'.
+app/Pages/Research.tsx(346,30): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/ui/button.tsx(2,22): error TS2307: Cannot find module '@radix-ui/react-slot' or its corresponding type declarations.

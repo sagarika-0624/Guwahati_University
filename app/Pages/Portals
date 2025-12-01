@@ -1,0 +1,311 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { createPageUrl } from '@/utils';
+import {
+  Globe, Database, BookOpen, Users, GraduationCap, FileText,
+  ArrowRight, CheckCircle, ExternalLink, Shield, Clock, Zap
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import EcosystemVisualizer from '@/components/features/EcosystemVisualizer';
+
+const portals = [
+  {
+    id: 'student',
+    name: 'Student Portal',
+    description: 'Access courses, grades, attendance, assignments, and academic resources',
+    icon: GraduationCap,
+    color: 'from-blue-500 to-blue-700',
+    status: 'online',
+    uptime: '99.8%',
+    users: '25,000+',
+    features: ['Course Management', 'Grade Tracking', 'Attendance', 'Library Access', 'Fee Payment'],
+    href: 'StudentPortal'
+  },
+  {
+    id: 'mmtc',
+    name: 'MMTC Portal',
+    description: 'Multimedia and Technology Center portal for digital resources and services',
+    icon: Database,
+    color: 'from-emerald-500 to-emerald-700',
+    status: 'online',
+    uptime: '99.5%',
+    users: '15,000+',
+    features: ['Digital Resources', 'E-Learning', 'Video Lectures', 'Online Exams', 'Certificates'],
+    href: 'MMTC'
+  },
+  {
+    id: 'gucdoe',
+    name: 'GUCDOE',
+    description: 'Center for Distance and Online Education - Learn from anywhere',
+    icon: Globe,
+    color: 'from-purple-500 to-purple-700',
+    status: 'online',
+    uptime: '99.7%',
+    users: '50,000+',
+    features: ['Distance Courses', 'Online Classes', 'Study Materials', 'Exam Portal', 'Support'],
+    href: 'GUCDOE'
+  },
+  {
+    id: 'journals',
+    name: 'Journals Portal',
+    description: 'Access research publications, journals, and academic papers',
+    icon: BookOpen,
+    color: 'from-amber-500 to-amber-700',
+    status: 'online',
+    uptime: '99.9%',
+    users: '8,000+',
+    features: ['Research Papers', 'Journal Access', 'Publication', 'Citation Tools', 'Archives'],
+    href: 'Journals'
+  },
+  {
+    id: 'admission',
+    name: 'Admission Portal',
+    description: 'Apply for programs, track applications, and manage admissions',
+    icon: Users,
+    color: 'from-red-500 to-red-700',
+    status: 'online',
+    uptime: '99.5%',
+    users: '100,000+',
+    features: ['Online Application', 'Document Upload', 'Status Tracking', 'Fee Payment', 'Results'],
+    href: 'AdmissionPortal'
+  },
+  {
+    id: 'faculty',
+    name: 'Faculty Portal',
+    description: 'Faculty management, research tools, and administrative functions',
+    icon: FileText,
+    color: 'from-cyan-500 to-cyan-700',
+    status: 'online',
+    uptime: '99.6%',
+    users: '500+',
+    features: ['Course Admin', 'Grade Entry', 'Research Tools', 'Leave Management', 'Reports'],
+    href: 'Faculty'
+  }
+];
+
+const features = [
+  {
+    icon: Shield,
+    title: 'Secure Authentication',
+    description: 'Single Sign-On (SSO) across all portals with enterprise-grade security'
+  },
+  {
+    icon: Zap,
+    title: '99.5% Uptime',
+    description: 'Reliable access to all services with minimal downtime'
+  },
+  {
+    icon: Clock,
+    title: '24/7 Availability',
+    description: 'Access your portals anytime, anywhere, on any device'
+  }
+];
+
+export default function Portals() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 opacity-30" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <Badge className="bg-amber-500 text-white mb-4">Integrated Ecosystem</Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              University Portal Hub
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Access all university services through our interconnected digital ecosystem
+            </p>
+          </motion.div>
+
+          {/* Features Bar */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10"
+                >
+                  <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-amber-400" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">{feature.title}</h3>
+                    <p className="text-sm text-gray-400">{feature.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Visualizer */}
+      <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <EcosystemVisualizer />
+        </div>
+      </section>
+
+      {/* Portals Grid */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">All Portals</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Quick access to all university digital services and platforms
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portals.map((portal, index) => {
+              const Icon = portal.icon;
+              return (
+                <motion.div
+                  key={portal.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 group">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`w-14 h-14 bg-gradient-to-br ${portal.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                          <Icon className="w-7 h-7 text-white" />
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <motion.div
+                            className="w-2 h-2 bg-emerald-500 rounded-full"
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          />
+                          <span className="text-xs text-emerald-600 font-medium">{portal.uptime}</span>
+                        </div>
+                      </div>
+                      <CardTitle className="text-xl group-hover:text-red-700 transition-colors">
+                        {portal.name}
+                      </CardTitle>
+                      <p className="text-gray-600 text-sm">{portal.description}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 text-sm text-gray-500">
+                          <Users className="w-4 h-4" />
+                          <span>{portal.users} Active Users</span>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          {portal.features.slice(0, 3).map((feature) => (
+                            <Badge key={feature} variant="secondary" className="text-xs">
+                              {feature}
+                            </Badge>
+                          ))}
+                          {portal.features.length > 3 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{portal.features.length - 3} more
+                            </Badge>
+                          )}
+                        </div>
+
+                        <a href={createPageUrl(portal.href)}>
+                          <Button className="w-full mt-4 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black group">
+                            Access Portal
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* SSO Info */}
+      <section className="py-16 px-4 bg-gradient-to-r from-red-800 to-red-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <Shield className="w-16 h-16 text-amber-400 mx-auto mb-6" />
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Single Sign-On Enabled
+          </h2>
+          <p className="text-red-100 mb-8 text-lg max-w-2xl mx-auto">
+            Login once to access all university portals. Your credentials work seamlessly across the entire ecosystem.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button size="lg" className="bg-white text-red-800 hover:bg-gray-100 gap-2">
+              Login to Portals
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              Register New Account
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Help Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Technical Support',
+                description: 'Having trouble accessing a portal? Our IT team is here to help.',
+                action: 'Get Support',
+                icon: '🛠️'
+              },
+              {
+                title: 'User Guides',
+                description: 'Step-by-step guides for using all university portals.',
+                action: 'View Guides',
+                icon: '📚'
+              },
+              {
+                title: 'Training Sessions',
+                description: 'Free training sessions for students and faculty.',
+                action: 'Register Now',
+                icon: '🎓'
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 border shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 mb-4">{item.description}</p>
+                <Button variant="outline" className="gap-2">
+                  {item.action}
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

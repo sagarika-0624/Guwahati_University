@@ -1,0 +1,20 @@
+﻿app/Components/Feature/CulturalSpotlight.tsx(4,28): error TS2307: Cannot find module '@/components/ui/GamochaPattern' or its corresponding type declarations.
+app/Components/layout/Footer.tsx(83,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/Components/layout/UnifiedHeader.tsx(83,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(280,25): error TS2554: Expected 1 arguments, but got 0.
+app/Components/ui/LanguageContext.tsx(282,36): error TS7031: Binding element 'children' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(294,14): error TS7006: Parameter 'key' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(295,12): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ en: { home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }; as: { ...; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ en: { home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }; as: { ...; }; }'.
+app/Components/ui/LanguageContext.tsx(295,43): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }'.
+app/Components/ui/LanguageContext.tsx(316,11): error TS7006: Parameter 'key' implicitly has an 'any' type.
+app/Components/ui/LanguageContext.tsx(316,19): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ home: string; academics: string; research: string; admissions: string; portals: string; campusLife: string; culturalHeritage: string; login: string; search: string; departments: string; programs: string; ... 108 more ...; library: string; }'.
+app/Pages/Academics.tsx(5,34): error TS2307: Cannot find module '../Components/Feature/AnnouncementSection' or its corresponding type declarations.
+app/Pages/Admission.tsx(215,58): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'SetStateAction<null>'.
+  Type 'string' is not assignable to type 'SetStateAction<null>'.
+app/Pages/CulturalHeritage.tsx(10,28): error TS2307: Cannot find module '@/components/ui/GamochaPattern' or its corresponding type declarations.
+app/Pages/Home.tsx(5,34): error TS2307: Cannot find module '../Components/Feature/AnnouncementSection' or its corresponding type declarations.
+app/Pages/Programs.tsx(229,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+app/Pages/Research.tsx(332,64): error TS2322: Type '{ children: Element[]; value: string; onValueChange: Dispatch<SetStateAction<string>>; className: string; }' is not assignable to type 'IntrinsicAttributes & { value: string; onValueChange: (value: string) => void; children: ReactNode; }'.
+  Property 'className' does not exist on type 'IntrinsicAttributes & { value: string; onValueChange: (value: string) => void; children: ReactNode; }'.
+app/Pages/Research.tsx(346,30): error TS7006: Parameter 'e' implicitly has an 'any' type.

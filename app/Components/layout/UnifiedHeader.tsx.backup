@@ -1,0 +1,109 @@
+import React from 'react';
+import { createPageUrl } from '@/lib/utils';
+import {
+  Facebook, Twitter, Instagram, Linkedin, Youtube,
+  MapPin, Phone, Mail, Globe, ArrowRight
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/components/ui/LanguageContext';
+
+export default function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    {
+      title: 'quickLinks',
+      links: [
+        { name: 'aboutUs', href: 'About' },
+        { name: 'academics', href: 'Academics' },
+        { name: 'admissions', href: 'Admissions' },
+        { name: 'research', href: 'Research' },
+        { name: 'placements', href: 'Placements' }
+      ]
+    },
+    {
+      title: 'portals',
+      links: [
+        { name: 'studentPortal', href: 'StudentPortal' },
+        { name: 'admissionPortal', href: 'AdmissionPortal' },
+        { name: 'mmtcPortal', href: 'MMTC' },
+        { name: 'alumni', href: 'Alumni' },
+        { name: 'library', href: 'Library' }
+      ]
+    },
+    {
+      title: 'contactUs',
+      links: [
+        { name: 'contact', href: 'Contact' },
+        { name: 'howToApply', href: 'Admissions' },
+        { name: 'facultyDirectory', href: 'Faculty' },
+        { name: 'itSupport', href: 'Support' }
+      ]
+    }
+  ];
+
+  return (
+    <footer className="bg-gray-900 text-white pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-red-900 rounded-lg flex items-center justify-center border border-white/10">
+                <span className="text-amber-400 font-bold text-lg">GU</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Gauhati University</h3>
+                <p className="text-xs text-gray-400">{t('established')}</p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {t('footerDesc')}
+            </p>
+            <div className="flex gap-4">
+              {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-700 hover:text-white transition-all text-gray-400"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Columns */}
+          {footerLinks.map((section) => (
+            <div key={section.title}>
+              <h4 className="font-bold text-lg mb-6 text-amber-400">{t(section.title)}</h4>
+              <ul className="space-y-4">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={createPageUrl(link.href)}
+                      className="text-gray-400 hover:text-white hover:pl-2 transition-all flex items-center gap-2 text-sm"
+                    >
+                      <span className="w-1 h-1 bg-red-600 rounded-full opacity-0 group-hover:opacity-100" />
+                      {t(link.name)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} Gauhati University. {t('allRightsReserved')}</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white transition-colors">{t('privacyPolicy')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('termsOfUse')}</a>
+            <a href="#" className="hover:text-white transition-colors">{t('sitemap')}</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
