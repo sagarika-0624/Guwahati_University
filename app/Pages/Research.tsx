@@ -98,19 +98,26 @@ const CardContent = ({ children, className = '' }: { children: React.ReactNode; 
 
 const TabsContext = React.createContext<{ value: string; onValueChange: (value: string) => void }>({ value: '', onValueChange: () => { } });
 
-const Tabs = ({ value, onValueChange, children, className = '' }: any) => (
+type TabsProps = {
+  value: string;
+  onValueChange: (value: string) => void;
+  children: React.ReactNode;
+  className?: string;
+};
+
+const Tabs: React.FC<TabsProps> = ({ value, onValueChange, children, className = '' }) => (
   <TabsContext.Provider value={{ value, onValueChange }}>
     <div className={className}>{children}</div>
   </TabsContext.Provider>
 );
 
-const TabsList = ({ children, className = '' }: any) => (
+const TabsList: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
   <div className={`inline-flex h-10 items-center justify-center rounded-md bg-gray-100 p-1 text-black ${className}`}>
     {children}
   </div>
 );
 
-const TabsTrigger = ({ value, children, className = '' }: any) => {
+const TabsTrigger: React.FC<{ value: string; children: React.ReactNode; className?: string }> = ({ value, children, className = '' }) => {
   const { value: selectedValue, onValueChange } = React.useContext(TabsContext);
   return (
     <button
@@ -123,7 +130,7 @@ const TabsTrigger = ({ value, children, className = '' }: any) => {
   );
 };
 
-const TabsContent = ({ value, children, className = '' }: any) => {
+const TabsContent: React.FC<{ value: string; children: React.ReactNode; className?: string }> = ({ value, children, className = '' }) => {
   const { value: selectedValue } = React.useContext(TabsContext);
   if (selectedValue !== value) return null;
   return <div className={`mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${className}`}>{children}</div>;
